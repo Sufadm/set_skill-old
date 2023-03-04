@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:set_skill/FlutterCourses/allcourseAdminadd.dart';
-
 import '../../../database/database_flutter/db_function.dart';
 
 class ListSectionsFlutter extends StatelessWidget {
@@ -49,10 +47,10 @@ class ListSectionsFlutter extends StatelessWidget {
                                 Navigator.pushNamed(context, 'DataBase');
                               } else if (data.sections == 'section 5') {
                                 Navigator.pushNamed(
-                                    context, 'FlutterAllCourse');
+                                    context, 'FlutterFirstCourse');
                               } else if (data.sections == 'section 6') {
                                 Navigator.pushNamed(
-                                    context, 'FlutterAllCourse');
+                                    context, 'FlutterSecondCourse');
                               }
                             },
                             icon: const Icon(Icons.play_arrow)),
