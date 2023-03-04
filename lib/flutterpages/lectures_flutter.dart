@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:set_skill/FlutterCourses/allcourseAdminadd.dart';
+import 'package:set_skill/FlutterCourses/allcourse_adminadd.dart';
 import 'package:set_skill/database/database_flutter/db_function.dart';
 import 'package:set_skill/database/models/fluttermodel/data_model2.dart';
 
@@ -137,11 +137,11 @@ class _LecturesFlutterState extends State<LecturesFlutter> {
                                           } else if (data.sections ==
                                               'section 5') {
                                             Navigator.pushNamed(
-                                                context, 'FlutterAllCourse');
+                                                context, 'FlutterFirstCourse');
                                           } else if (data.sections ==
                                               'section 6') {
                                             Navigator.pushNamed(
-                                                context, 'FlutterAllCourse');
+                                                context, 'FlutterSecondCourse');
                                           }
                                         },
                                         icon: const Icon(Icons.play_arrow)),

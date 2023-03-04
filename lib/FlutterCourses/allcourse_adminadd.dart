@@ -10,7 +10,7 @@ class FlutterAllCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter All Course'),
+        title: const Text('Flutter one Course'),
       ),
       body: Column(
         children: [

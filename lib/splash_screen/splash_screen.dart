@@ -10,10 +10,11 @@ class Splash_Screen extends StatefulWidget {
   const Splash_Screen({super.key});
 
   @override
-  State<Splash_Screen> createState() => _Splash_ScreenState();
+  State<Splash_Screen> createState() => SplashScreenState();
 }
 
-class _Splash_ScreenState extends State<Splash_Screen> {
+// ignore: camel_case_types
+class SplashScreenState extends State<Splash_Screen> {
   @override
   void initState() {
     navigate_to_Homescreen();

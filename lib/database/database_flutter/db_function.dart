@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hive/hive.dart';
-import 'package:set_skill/database/models/model_mern/data_model2_mern.dart';
-import 'package:set_skill/database/models/model_mern/data_model_mern.dart';
-
 import '../models/fluttermodel/data_model.dart';
 import '../models/fluttermodel/data_model2.dart';
 

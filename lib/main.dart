@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:set_skill/FlutterCourses/allcourseAdminadd.dart';
+import 'package:set_skill/FlutterCourses/allcourse_adminadd.dart';
 import 'package:set_skill/blogs_homepage/blog_home_page.dart';
 import 'package:set_skill/FlutterCourses/dart_basics.dart';
 import 'package:set_skill/FlutterCourses/database.dart';
@@ -29,6 +29,7 @@ import 'package:set_skill/mernstack%20courses/mernbasics.dart';
 import 'package:set_skill/mernstack%20courses/mongodb.dart';
 import 'package:set_skill/mernstack%20courses/nodejs.dart';
 import 'package:set_skill/splash_screen/splash_screen.dart';
+import 'FlutterCourses/allcourse_adminadd2.dart';
 import 'database/database_mern/database_mern.dart';
 import 'database/models/model_mern/data_model2_mern.dart';
 import 'flutterpages/overview_flutter.dart';
@@ -82,10 +83,11 @@ class MyApp extends StatelessWidget {
         'top10nodejsmodules': (context) => const Top10NodejsModules(),
         'privacypolicy': (context) => const Privacy(),
         'aboutskillset': (context) => const AboutSkillset(),
-        'FlutterAllCourse': (context) => const FlutterAllCourse(),
+        'FlutterFirstCourse': (context) => const FlutterAllCourse(),
         'MernFullCourse': (context) => const MernAllCourse(),
         "AdminAccessPage": (context) => const AdminAccessPage(),
         "MernAddCourse": (context) => MernAddCourse(),
+        "FlutterSecondCourse": (context) => const FlutterSecondCourse(),
       },
     );
   }
