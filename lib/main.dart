@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:set_skill/FlutterCourses/allcourse_adminadd.dart';
 import 'package:set_skill/blogs_homepage/blog_home_page.dart';
@@ -22,7 +20,6 @@ import 'package:set_skill/flutterpages/lectures_flutter.dart';
 import 'package:set_skill/flutterpages/mernstack_pages/lectures_mern.dart';
 import 'package:set_skill/flutterpages/mernstack_pages/overview_mern.dart';
 import 'package:set_skill/flutterpages/tabbar.dart';
-import 'package:set_skill/loginpage/adminpage/widgets/list_admin_mern.dart';
 import 'package:set_skill/mernstack%20courses/allcourseAdminadd_mern.dart';
 import 'package:set_skill/mernstack%20courses/javascript.dart';
 import 'package:set_skill/mernstack%20courses/mernbasics.dart';
@@ -33,15 +30,12 @@ import 'FlutterCourses/allcourse_adminadd2.dart';
 import 'database/database_mern/database_mern.dart';
 import 'database/models/model_mern/data_model2_mern.dart';
 import 'flutterpages/overview_flutter.dart';
-import 'package:path_provider/path_provider.dart' as path_provider;
-
 import 'loginpage/adminpage/admin_editpage.dart';
 import 'loginpage/adminpage/widgets/mern_adminwidget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final appDocumentDirectory = WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(SectionAdapter());
   Hive.registerAdapter(CourseFlutterAdapter());

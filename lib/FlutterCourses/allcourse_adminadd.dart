@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:set_skill/database/database_flutter/db_function.dart';
 
 class FlutterAllCourse extends StatelessWidget {
