@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:set_skill/FlutterCourses/allcourse_adminadd.dart';
 import '../../../database/database_flutter/db_function.dart';
 
 class ListSectionsFlutter extends StatefulWidget {
@@ -14,7 +15,14 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Section list of flutter'),
+        backgroundColor: Colors.amber,
+        leading: const BackButton(
+          color: Colors.black,
+        ),
+        title: const Text(
+          'Section list of flutter',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,6 +41,7 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
           ),
           ValueListenableBuilder(
             valueListenable: courselistNotifier,
+            // ignore: non_constant_identifier_names
             builder: (context, Section, child) {
               return Expanded(
                 child: ListView.builder(
@@ -51,11 +60,27 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
                               } else if (data.sections == 'section 4') {
                                 Navigator.pushNamed(context, 'DataBase');
                               } else if (data.sections == 'section 5') {
-                                Navigator.pushNamed(
-                                    context, 'FlutterFirstCourse');
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return FlutterAllCourse(
+                                      coursename: data.coursename,
+                                      logolink: data.logolink,
+                                      youtubeid: data.youtubevideoid,
+                                      blog: data.blog,
+                                      totaltime: data.totaltime,
+                                      index: index);
+                                }));
                               } else if (data.sections == 'section 6') {
-                                Navigator.pushNamed(
-                                    context, 'FlutterSecondCourse');
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return FlutterAllCourse(
+                                      coursename: data.coursename,
+                                      logolink: data.logolink,
+                                      youtubeid: data.youtubevideoid,
+                                      blog: data.blog,
+                                      totaltime: data.totaltime,
+                                      index: index);
+                                }));
                               }
                             },
                             icon: const Icon(Icons.play_arrow)),

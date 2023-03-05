@@ -23,7 +23,8 @@ import 'package:set_skill/mernstack%20courses/mernbasics.dart';
 import 'package:set_skill/mernstack%20courses/mongodb.dart';
 import 'package:set_skill/mernstack%20courses/nodejs.dart';
 import 'package:set_skill/splash_screen/splash_screen.dart';
-import 'FlutterCourses/allcourse_adminadd2.dart';
+
+import 'database/database_flutter/db_function.dart';
 import 'database/database_mern/database_mern.dart';
 import 'database/models/model_mern/data_model2_mern.dart';
 import 'flutterpages/overview_flutter.dart';
@@ -38,7 +39,7 @@ Future<void> main() async {
   Hive.registerAdapter(CourseFlutterAdapter());
   Hive.registerAdapter(SectionMernAdapter());
   Hive.registerAdapter(CourseMernAdapter());
-
+  getallcourseFlutter();
   getallsectionsmern();
   runApp(const MyApp());
 }
@@ -74,11 +75,9 @@ class MyApp extends StatelessWidget {
         'top10nodejsmodules': (context) => const Top10NodejsModules(),
         'privacypolicy': (context) => const Privacy(),
         'aboutskillset': (context) => const AboutSkillset(),
-        //!'FlutterFirstCourse': (context) =>  FlutterAllCourse(),
         'MernFullCourse': (context) => const MernAllCourse(),
         "AdminAccessPage": (context) => const AdminAccessPage(),
         "MernAddCourse": (context) => MernAddCourse(),
-        "FlutterSecondCourse": (context) => const FlutterSecondCourse(),
       },
     );
   }

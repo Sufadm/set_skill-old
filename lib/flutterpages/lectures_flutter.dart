@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:set_skill/FlutterCourses/allcourse_adminadd.dart';
 import 'package:set_skill/database/database_flutter/db_function.dart';
@@ -135,12 +133,32 @@ class _LecturesFlutterState extends State<LecturesFlutter> {
                                                 context, 'DataBase');
                                           } else if (data.sections ==
                                               'section 5') {
-                                            Navigator.pushNamed(
-                                                context, 'FlutterFirstCourse');
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                                    builder: (context) {
+                                              return FlutterAllCourse(
+                                                  coursename: data.coursename,
+                                                  logolink: data.logolink,
+                                                  youtubeid:
+                                                      data.youtubevideoid,
+                                                  blog: data.blog,
+                                                  totaltime: data.totaltime,
+                                                  index: index);
+                                            }));
                                           } else if (data.sections ==
                                               'section 6') {
-                                            Navigator.pushNamed(
-                                                context, 'FlutterSecondCourse');
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                                    builder: (context) {
+                                              return FlutterAllCourse(
+                                                  coursename: data.coursename,
+                                                  logolink: data.logolink,
+                                                  youtubeid:
+                                                      data.youtubevideoid,
+                                                  blog: data.blog,
+                                                  totaltime: data.totaltime,
+                                                  index: index);
+                                            }));
                                           }
                                         },
                                         icon: const Icon(Icons.play_arrow)),

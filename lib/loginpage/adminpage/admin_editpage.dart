@@ -25,7 +25,7 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(
-          color: Colors.black, // <-- SEE HERE
+          color: Colors.black,
         ),
         backgroundColor: Colors.amber,
         title: const Text(
@@ -51,7 +51,7 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
                     fontStyle: FontStyle.italic),
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'section',
+                    labelText: 'Section Name',
                     hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
               ),
               const SizedBox(
@@ -97,6 +97,7 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
                 height: 10,
               ),
               TextFormField(
+                maxLines: 15,
                 controller: _blog,
                 style: const TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
@@ -104,6 +105,7 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Blog',
+                    alignLabelWithHint: true,
                     hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
               ),
               const SizedBox(
