@@ -4,7 +4,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:set_skill/FlutterCourses/allcourse_adminadd.dart';
 import 'package:set_skill/database/database_flutter/db_function.dart';
-import 'package:set_skill/database/models/fluttermodel/data_model2.dart';
 
 class LecturesFlutter extends StatefulWidget {
   const LecturesFlutter({super.key});
@@ -109,7 +108,7 @@ class _LecturesFlutterState extends State<LecturesFlutter> {
                             fontWeight: FontWeight.bold, fontSize: 19),
                       ),
                       ValueListenableBuilder(
-                        valueListenable: sectionlistNotifier,
+                        valueListenable: courselistNotifier,
                         builder: (context, value, child) {
                           return Expanded(
                             child: ListView.builder(

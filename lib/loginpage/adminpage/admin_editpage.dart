@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:set_skill/database/models/fluttermodel/data_model.dart';
 import 'package:set_skill/loginpage/adminpage/widgets/list_admin_flutter_section.dart';
-import 'package:set_skill/loginpage/adminpage/widgets/mern_adminwidget.dart';
-
 import '../../database/database_flutter/db_function.dart';
-import '../../database/models/fluttermodel/data_model2.dart';
+//import '../../database/models/fluttermodel/data_model2.dart';
 
 class AdminAccessPage extends StatefulWidget {
   const AdminAccessPage({super.key});
@@ -134,7 +130,7 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
                               side: const BorderSide(
                                   color: Color.fromARGB(255, 0, 0, 0))))),
                   onPressed: () {
-                    addsection();
+                    // addsection();
                     addcourse();
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
@@ -155,11 +151,13 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
     final videolink = _youtubevideoid.text.trim();
     final blg = _blog.text.trim();
     final duration = _totaltime.text.trim();
+    final sectionflutter = _section.text.trim();
     if (name.isEmpty |
         logo.isEmpty |
         videolink.isEmpty |
         blg.isEmpty |
-        duration.isEmpty) {
+        duration.isEmpty |
+        sectionflutter.isEmpty) {
       return;
     } else {
       final model1 = CourseFlutter(
@@ -167,18 +165,19 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
           logolink: logo,
           youtubevideoid: videolink,
           blog: blg,
-          totaltime: duration);
+          totaltime: duration,
+          sections: sectionflutter);
       addcourseflutter(model1);
     }
   }
 
-  Future<void> addsection() async {
-    final sectionnumber = _section.text.trim();
-    if (sectionnumber.isEmpty) {
-      return;
-    } else {
-      final model2 = Section(sections: sectionnumber);
-      addsections(model2);
-    }
-  }
+  // Future<void> addsection() async {
+  //   final sectionnumber = _section.text.trim();
+  //   if (sectionnumber.isEmpty) {
+  //     return;
+  //   } else {
+  //     final model2 = Section(sections: sectionnumber);
+  //     addsections(model2);
+  //   }
+  // }
 }

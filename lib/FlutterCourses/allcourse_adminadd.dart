@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:set_skill/database/database_flutter/db_function.dart';
 
 class FlutterAllCourse extends StatelessWidget {
-  const FlutterAllCourse({super.key});
+  final String coursename;
+  final String logolink;
+  final String youtubeid;
+  final String blog;
+  final String totaltime;
+  final int index;
+  const FlutterAllCourse(
+      {super.key,
+      required this.coursename,
+      required this.logolink,
+      required this.youtubeid,
+      required this.blog,
+      required this.totaltime,
+      required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +25,7 @@ class FlutterAllCourse extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ValueListenableBuilder(
-            valueListenable: courselistNotifier,
-            builder: (context, value, child) {
-              return Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    final data = value[index];
-                    return Text(data.youtubevideoid);
-                  },
-                  itemCount: value.length,
-                ),
-              );
-            },
-          ),
+          Text(coursename),
         ],
       ),
     );

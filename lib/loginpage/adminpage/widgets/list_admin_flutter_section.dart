@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../database/database_flutter/db_function.dart';
 
-class ListSectionsFlutter extends StatelessWidget {
+class ListSectionsFlutter extends StatefulWidget {
   const ListSectionsFlutter({super.key});
 
+  @override
+  State<ListSectionsFlutter> createState() => _ListSectionsFlutterState();
+}
+
+class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +32,12 @@ class ListSectionsFlutter extends StatelessWidget {
             style: GoogleFonts.lato(fontWeight: FontWeight.bold, fontSize: 19),
           ),
           ValueListenableBuilder(
-            valueListenable: sectionlistNotifier,
-            builder: (context, value, child) {
+            valueListenable: courselistNotifier,
+            builder: (context, Section, child) {
               return Expanded(
                 child: ListView.builder(
                   itemBuilder: ((context, index) {
-                    final data = value[index];
+                    final data = Section[index];
                     return Row(
                       children: [
                         IconButton(
@@ -105,7 +110,7 @@ class ListSectionsFlutter extends StatelessWidget {
                       ],
                     );
                   }),
-                  itemCount: value.length,
+                  itemCount: Section.length,
                 ),
               );
             },

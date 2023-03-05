@@ -15,12 +15,15 @@ class CourseFlutter {
   String blog;
   @HiveField(5)
   String totaltime;
+  @HiveField(6)
+  String sections;
 
-  CourseFlutter({
-    required this.coursename,
-    required this.logolink,
-    required this.youtubevideoid,
-    required this.blog,
-    required this.totaltime,
-  });
+  CourseFlutter(
+      {required this.coursename,
+      required this.logolink,
+      required this.youtubevideoid,
+      required this.blog,
+      required this.totaltime,
+      required this.sections,
+      this.id});
 }

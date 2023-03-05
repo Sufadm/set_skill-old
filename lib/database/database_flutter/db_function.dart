@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hive/hive.dart';
 import '../models/fluttermodel/data_model.dart';
-import '../models/fluttermodel/data_model2.dart';
 
 ValueNotifier<List<CourseFlutter>> courselistNotifier = ValueNotifier([]);
 Future<void> addcourseflutter(CourseFlutter value) async {
@@ -11,6 +10,7 @@ Future<void> addcourseflutter(CourseFlutter value) async {
   courselistNotifier.notifyListeners();
   courselistNotifier.value.add(value);
   print(value.coursename);
+  print(value.blog);
 }
 
 Future<void> getallcourseFlutter() async {
@@ -20,25 +20,25 @@ Future<void> getallcourseFlutter() async {
   courselistNotifier.notifyListeners();
 }
 
-ValueNotifier<List<Section>> sectionlistNotifier = ValueNotifier([]);
-Future<void> addsections(Section value) async {
-  final sectionsDB = await Hive.openBox<Section>('sections');
-  final id = await sectionsDB.add(value);
-  value.id = id;
-  sectionlistNotifier.notifyListeners();
-  sectionlistNotifier.value.add(value);
-  print(value.sections);
-}
+// ValueNotifier<List<Section>> sectionlistNotifier = ValueNotifier([]);
+// Future<void> addsections(Section value) async {
+//   final sectionsDB = await Hive.openBox<Section>('sections');
+//   final id = await sectionsDB.add(value);
+//   value.id = id;
+//   sectionlistNotifier.notifyListeners();
+//   sectionlistNotifier.value.add(value);
+//   print(value.sections);
+// }
 
-Future<void> getallsections() async {
-  final sectionsDB = await Hive.openBox<Section>('sections');
-  sectionlistNotifier.value.clear();
-  sectionlistNotifier.value.addAll(sectionsDB.values);
-  sectionlistNotifier.notifyListeners();
-}
+// Future<void> getallsections() async {
+//   final sectionsDB = await Hive.openBox<Section>('sections');
+//   sectionlistNotifier.value.clear();
+//   sectionlistNotifier.value.addAll(sectionsDB.values);
+//   sectionlistNotifier.notifyListeners();
+// }
 
 Future<void> deletesection(int id) async {
-  final sectionsDB = await Hive.openBox<Section>('sections');
+  final sectionsDB = await Hive.openBox<CourseFlutter>('coursedetails');
   await sectionsDB.deleteAt(id);
-  getallsections();
+  getallcourseFlutter();
 }

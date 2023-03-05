@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:set_skill/FlutterCourses/allcourse_adminadd.dart';
 import 'package:set_skill/blogs_homepage/blog_home_page.dart';
 import 'package:set_skill/FlutterCourses/dart_basics.dart';
 import 'package:set_skill/FlutterCourses/database.dart';
@@ -12,9 +11,7 @@ import 'package:set_skill/blogs/blogspage/aggregation.dart';
 import 'package:set_skill/blogs/blogspage/top10modules.dart';
 import 'package:set_skill/blogs/blogspage/top10tools.dart';
 import 'package:set_skill/blogs/blogspage/widgetpage.dart';
-import 'package:set_skill/database/database_flutter/db_function.dart';
 import 'package:set_skill/database/models/fluttermodel/data_model.dart';
-import 'package:set_skill/database/models/fluttermodel/data_model2.dart';
 import 'package:set_skill/database/models/model_mern/data_model_mern.dart';
 import 'package:set_skill/flutterpages/lectures_flutter.dart';
 import 'package:set_skill/flutterpages/mernstack_pages/lectures_mern.dart';
@@ -37,11 +34,11 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
-  Hive.registerAdapter(SectionAdapter());
+
   Hive.registerAdapter(CourseFlutterAdapter());
   Hive.registerAdapter(SectionMernAdapter());
   Hive.registerAdapter(CourseMernAdapter());
-  getallsections();
+
   getallsectionsmern();
   runApp(const MyApp());
 }
@@ -77,7 +74,7 @@ class MyApp extends StatelessWidget {
         'top10nodejsmodules': (context) => const Top10NodejsModules(),
         'privacypolicy': (context) => const Privacy(),
         'aboutskillset': (context) => const AboutSkillset(),
-        'FlutterFirstCourse': (context) => const FlutterAllCourse(),
+        //!'FlutterFirstCourse': (context) =>  FlutterAllCourse(),
         'MernFullCourse': (context) => const MernAllCourse(),
         "AdminAccessPage": (context) => const AdminAccessPage(),
         "MernAddCourse": (context) => MernAddCourse(),
