@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 part 'data_model_mern.g.dart';
 
-@HiveType(typeId: 3)
+@HiveType(typeId: 2)
 class CourseMern {
   @HiveField(0)
   int? id;
@@ -15,12 +15,15 @@ class CourseMern {
   String blog;
   @HiveField(5)
   String totaltime;
+  @HiveField(6)
+  String sectionsmern;
 
-  CourseMern({
-    required this.coursename,
-    required this.logolink,
-    required this.youtubevideoid,
-    required this.blog,
-    required this.totaltime,
-  });
+  CourseMern(
+      {required this.coursename,
+      required this.logolink,
+      required this.youtubevideoid,
+      required this.blog,
+      required this.totaltime,
+      required this.sectionsmern,
+      this.id});
 }

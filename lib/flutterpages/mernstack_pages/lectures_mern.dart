@@ -4,8 +4,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:set_skill/mernstack%20courses/javascript.dart';
 
+import '../../FlutterCourses/allcourse_adminadd.dart';
 import '../../database/database_mern/database_mern.dart';
 import '../../loginpage/adminpage/widgets/list_admin_mern.dart';
+import '../../mernstack courses/allcourseAdminadd_mern.dart';
 
 class MernLectures extends StatefulWidget {
   const MernLectures({super.key});
@@ -109,7 +111,7 @@ class _MernLecturesState extends State<MernLectures> {
                             fontWeight: FontWeight.bold, fontSize: 19),
                       ),
                       ValueListenableBuilder(
-                        valueListenable: sectionlistNotifiermern,
+                        valueListenable: courselistNotifiermern,
                         builder: (context, value, child) {
                           return Expanded(
                             child: ListView.builder(
@@ -137,12 +139,32 @@ class _MernLecturesState extends State<MernLectures> {
                                                 context, 'Mongodb');
                                           } else if (data.sectionsmern ==
                                               'section 5') {
-                                            Navigator.pushNamed(
-                                                context, 'MernFullCourse');
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                                    builder: (context) {
+                                              return MernAllCourse(
+                                                  coursename: data.coursename,
+                                                  logolink: data.logolink,
+                                                  youtubeid:
+                                                      data.youtubevideoid,
+                                                  blog: data.blog,
+                                                  totaltime: data.totaltime,
+                                                  index: index);
+                                            }));
                                           } else if (data.sectionsmern ==
                                               'section 6') {
-                                            Navigator.pushNamed(
-                                                context, 'MernFullCourse');
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                                    builder: (context) {
+                                              return MernAllCourse(
+                                                  coursename: data.coursename,
+                                                  logolink: data.logolink,
+                                                  youtubeid:
+                                                      data.youtubevideoid,
+                                                  blog: data.blog,
+                                                  totaltime: data.totaltime,
+                                                  index: index);
+                                            }));
                                           }
                                         },
                                         icon: const Icon(Icons.play_arrow)),

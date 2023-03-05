@@ -19,6 +19,7 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
   final _blog = TextEditingController();
   final _section = TextEditingController();
   final _totaltime = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,111 +37,162 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Text(
-                'FLUTTER COURSE\n',
-                style: GoogleFonts.lato(
-                  fontWeight: FontWeight.bold,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                Text(
+                  'FLUTTER COURSE\n',
+                  style: GoogleFonts.lato(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              TextFormField(
-                controller: _section,
-                style: const TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontStyle: FontStyle.italic),
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Section Name',
-                    hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                controller: _coursename,
-                style: const TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontStyle: FontStyle.italic),
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Course Name',
-                    hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                controller: _logolink,
-                style: const TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontStyle: FontStyle.italic),
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Logo Link',
-                    hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                controller: _youtubevideoid,
-                style: const TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontStyle: FontStyle.italic),
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'youtube vedio id',
-                    hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                maxLines: 15,
-                controller: _blog,
-                style: const TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontStyle: FontStyle.italic),
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Blog',
-                    alignLabelWithHint: true,
-                    hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                controller: _totaltime,
-                style: const TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontStyle: FontStyle.italic),
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Total Time',
-                    hintStyle: TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              ElevatedButton(
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(1.0),
-                              side: const BorderSide(
-                                  color: Color.fromARGB(255, 0, 0, 0))))),
-                  onPressed: () {
-                    // addsection();
-                    addcourse();
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const ListSectionsFlutter();
-                    }));
+                TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Section is Required';
+                    } else {
+                      return null;
+                    }
                   },
-                  child: const Text('Add Course')),
-            ],
+                  controller: _section,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontStyle: FontStyle.italic),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Section Name',
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Coursename is Required';
+                    } else {
+                      return null;
+                    }
+                  },
+                  controller: _coursename,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontStyle: FontStyle.italic),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Course Name',
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Logo is Required';
+                    } else {
+                      return null;
+                    }
+                  },
+                  controller: _logolink,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontStyle: FontStyle.italic),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Logo Link',
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Youtube vedio id is Required';
+                    } else {
+                      return null;
+                    }
+                  },
+                  controller: _youtubevideoid,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontStyle: FontStyle.italic),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'youtube vedio id',
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Blog is Required';
+                    } else {
+                      return null;
+                    }
+                  },
+                  maxLines: 15,
+                  controller: _blog,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontStyle: FontStyle.italic),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Blog',
+                      alignLabelWithHint: true,
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Total time is Required';
+                    } else {
+                      return null;
+                    }
+                  },
+                  controller: _totaltime,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontStyle: FontStyle.italic),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Total Time',
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(1.0),
+                                    side: const BorderSide(
+                                        color: Color.fromARGB(255, 0, 0, 0))))),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        addcourse();
+                      } else {
+                        return;
+                      }
+                    },
+                    child: const Text('Add Course')),
+              ],
+            ),
           ),
         ),
       ),
@@ -160,7 +212,13 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
         blg.isEmpty |
         duration.isEmpty |
         sectionflutter.isEmpty) {
-      return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            duration: Duration(seconds: 1),
+            content: Text(
+              'Please fill all the fields',
+            )),
+      );
     } else {
       final model1 = CourseFlutter(
           coursename: name,
@@ -170,6 +228,9 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
           totaltime: duration,
           sections: sectionflutter);
       addcourseflutter(model1);
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return const ListSectionsFlutter();
+      }));
     }
   }
 

@@ -14,6 +14,16 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        child: Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
+        onPressed: () {
+          Navigator.pushNamed(context, 'AdminAccessPage');
+        },
+      ),
       appBar: AppBar(
         backgroundColor: Colors.amber,
         leading: const BackButton(

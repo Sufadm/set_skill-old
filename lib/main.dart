@@ -17,6 +17,7 @@ import 'package:set_skill/flutterpages/lectures_flutter.dart';
 import 'package:set_skill/flutterpages/mernstack_pages/lectures_mern.dart';
 import 'package:set_skill/flutterpages/mernstack_pages/overview_mern.dart';
 import 'package:set_skill/flutterpages/tabbar.dart';
+import 'package:set_skill/loginpage/adminpage/widgets/list_admin_mern.dart';
 import 'package:set_skill/mernstack%20courses/allcourseAdminadd_mern.dart';
 import 'package:set_skill/mernstack%20courses/javascript.dart';
 import 'package:set_skill/mernstack%20courses/mernbasics.dart';
@@ -26,9 +27,9 @@ import 'package:set_skill/splash_screen/splash_screen.dart';
 
 import 'database/database_flutter/db_function.dart';
 import 'database/database_mern/database_mern.dart';
-import 'database/models/model_mern/data_model2_mern.dart';
 import 'flutterpages/overview_flutter.dart';
 import 'loginpage/adminpage/admin_editpage.dart';
+import 'loginpage/adminpage/widgets/list_admin_flutter_section.dart';
 import 'loginpage/adminpage/widgets/mern_adminwidget.dart';
 
 Future<void> main() async {
@@ -37,10 +38,9 @@ Future<void> main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(CourseFlutterAdapter());
-  Hive.registerAdapter(SectionMernAdapter());
   Hive.registerAdapter(CourseMernAdapter());
   getallcourseFlutter();
-  getallsectionsmern();
+  getallcoursemern();
   runApp(const MyApp());
 }
 
@@ -75,9 +75,11 @@ class MyApp extends StatelessWidget {
         'top10nodejsmodules': (context) => const Top10NodejsModules(),
         'privacypolicy': (context) => const Privacy(),
         'aboutskillset': (context) => const AboutSkillset(),
-        'MernFullCourse': (context) => const MernAllCourse(),
+        //  'MernFullCourse': (context) => const MernAllCourse(),
         "AdminAccessPage": (context) => const AdminAccessPage(),
         "MernAddCourse": (context) => MernAddCourse(),
+        "listsectionmern": (context) => const ListSectionsMern(),
+        "ListSectionsFlutter": (context) => const ListSectionsFlutter(),
       },
     );
   }

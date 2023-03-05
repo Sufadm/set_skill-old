@@ -124,81 +124,12 @@ class _FlutterAllCourseState extends State<FlutterAllCourse> {
                         style: GoogleFonts.lato(fontWeight: FontWeight.bold),
                       ),
                     ),
-                    // Container(
-                    //   margin: const EdgeInsets.only(
-                    //     left: 10,
-                    //   ),
-                    //   child: Text(
-                    //     '',
-                    //     style: GoogleFonts.lato(),
-                    //   ),
-                    // ),
-                    // const SizedBox(
-                    //   height: 15,
-                    // ),
-                    // Text(
-                    //   ' DART PARAMETERS',
-                    //   style: GoogleFonts.robotoMono(
-                    //       fontWeight: FontWeight.bold, fontSize: 17),
-                    // ),
-                    // Container(
-                    //   margin: const EdgeInsets.only(left: 12),
-                    //   child: Text(
-                    //     'Named Parameters:\nNamed parameters allow you to specify parameters by name when calling a function. They are defined by wrapping the parameter name in curly braces {} in the function definition. ',
-                    //     style: GoogleFonts.lato(),
-                    //   ),
-                    // ),
-                    // const SizedBox(
-                    //   height: 10,
-                    // ),
-                    // Container(
-                    //   margin: const EdgeInsets.only(left: 12),
-                    //   child: Text(
-                    //     'Optional Parameters:\nOptional parameters allow you to define parameters that can be omitted when calling a function. They are defined by wrapping the parameter name in square brackets [] in the function definition\n',
-                    //     style: GoogleFonts.lato(),
-                    //   ),
-                    // ),
-                    // Text(
-                    //   ' CONST',
-                    //   style: GoogleFonts.robotoMono(
-                    //       fontWeight: FontWeight.bold, fontSize: 17),
-                    // ),
-                    // Container(
-                    //   margin: const EdgeInsets.only(left: 12),
-                    //   child: Text(
-                    //     'const is used to declare a compile-time constant. This means that the value of the variable is determined at compile-time and cannot be changed at runtime. const can be used to declare variables of primitive types, collections, and objects whose constructors are marked as const. ',
-                    //     style: GoogleFonts.lato(),
-                    //   ),
-                    // ),
-                    // Text(
-                    //   ' FINAL',
-                    //   style: GoogleFonts.robotoMono(
-                    //       fontWeight: FontWeight.bold, fontSize: 17),
-                    // ),
-                    // Container(
-                    //   margin: const EdgeInsets.only(left: 12),
-                    //   child: Text(
-                    //     'final is used to declare a variable whose value is fixed once it is initialized. This means that the value of a final variable can be determined at runtime, but once it is set, it cannot be changed. final can be used to declare variables of any type, including objects.',
-                    //     style: GoogleFonts.lato(),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
             ));
       }
     });
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: const Text('Flutter Course'),
-    //   ),
-    //   body: Column(
-    //     children: [
-    //       Text(widget.coursename),
-    //       Text(widget.blog),
-    //     ],
-    //   ),
-    // );
   }
 
   youtubeHierarchy() {

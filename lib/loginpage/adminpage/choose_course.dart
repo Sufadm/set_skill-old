@@ -36,7 +36,8 @@ class ChooseCourse extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all(Colors.amber),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, 'AdminAccessPage');
+                    //Navigator.pushNamed(context, 'AdminAccessPage');
+                    Navigator.pushNamed(context, 'ListSectionsFlutter');
                   },
                   child: const Text(
                     'FLUTTER',
@@ -52,7 +53,8 @@ class ChooseCourse extends StatelessWidget {
                       backgroundColor: MaterialStateProperty.all(Colors.amber),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'MernAddCourse');
+                      // Navigator.pushNamed(context, 'MernAddCourse');
+                      Navigator.pushNamed(context, 'listsectionmern');
                     },
                     child: const Text(
                       'MERNSTACK',
