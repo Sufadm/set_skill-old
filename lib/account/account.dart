@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:set_skill/account/privacy.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Account extends StatelessWidget {

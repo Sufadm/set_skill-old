@@ -21,8 +21,7 @@ class CourseFlutterAdapter extends TypeAdapter<CourseFlutter> {
       logolink: fields[2] as String,
       youtubevideoid: fields[3] as String,
       blog: fields[4] as String,
-      totaltime: fields[5] as String,
-      sections: fields[6] as String,
+      sections: fields[5] as String,
       id: fields[0] as int?,
     );
   }
@@ -30,7 +29,7 @@ class CourseFlutterAdapter extends TypeAdapter<CourseFlutter> {
   @override
   void write(BinaryWriter writer, CourseFlutter obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -42,8 +41,6 @@ class CourseFlutterAdapter extends TypeAdapter<CourseFlutter> {
       ..writeByte(4)
       ..write(obj.blog)
       ..writeByte(5)
-      ..write(obj.totaltime)
-      ..writeByte(6)
       ..write(obj.sections);
   }
 

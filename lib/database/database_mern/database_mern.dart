@@ -21,23 +21,6 @@ Future<void> getallcoursemern() async {
   courselistNotifiermern.notifyListeners();
 }
 
-// ValueNotifier<List<SectionMern>> sectionlistNotifiermern = ValueNotifier([]);
-// Future<void> addsectionsmern(SectionMern value) async {
-//   final sectionsmernDB = await Hive.openBox<SectionMern>('sectionsmern');
-//   final id = await sectionsmernDB.add(value);
-//   value.id = id;
-//   sectionlistNotifiermern.notifyListeners();
-//   sectionlistNotifiermern.value.add(value);
-//   print(value.sectionsmern);
-// }
-
-// Future<void> getallsectionsmern() async {
-//   final sectionsmernDB = await Hive.openBox<SectionMern>('sectionsmern');
-//   sectionlistNotifiermern.value.clear();
-//   sectionlistNotifiermern.value.addAll(sectionsmernDB.values);
-//   sectionlistNotifiermern.notifyListeners();
-// }
-
 Future<void> deletesectionMern(int id) async {
   final sectionsmernDB = await Hive.openBox<CourseMern>('coursedetailsmern');
   await sectionsmernDB.deleteAt(id);

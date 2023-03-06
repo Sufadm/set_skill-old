@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
-import 'package:set_skill/flutterpages/lectures_flutter.dart';
-import 'package:set_skill/flutterpages/tabbar.dart';
 
 class OverviewFlutter extends StatelessWidget {
   const OverviewFlutter({super.key});

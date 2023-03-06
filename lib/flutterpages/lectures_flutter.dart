@@ -143,7 +143,6 @@ class _LecturesFlutterState extends State<LecturesFlutter> {
                                                   youtubeid:
                                                       data.youtubevideoid,
                                                   blog: data.blog,
-                                                  totaltime: data.totaltime,
                                                   index: index);
                                             }));
                                           } else if (data.sections ==
@@ -157,7 +156,6 @@ class _LecturesFlutterState extends State<LecturesFlutter> {
                                                   youtubeid:
                                                       data.youtubevideoid,
                                                   blog: data.blog,
-                                                  totaltime: data.totaltime,
                                                   index: index);
                                             }));
                                           }

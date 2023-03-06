@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:set_skill/account/account.dart';
 import 'package:set_skill/flutterpages/mernstack_pages/overview_mern.dart';
 import 'package:set_skill/flutterpages/tabbar.dart';
@@ -49,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color.fromARGB(255, 13, 10, 188)),
+                color: const Color.fromARGB(255, 13, 10, 188)),
             height: 170,
             width: double.infinity,
             child: Row(
@@ -126,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              GestureDetector(
+              Bounceable(
                 onTap: () {
                   Navigator.pushNamed(context, 'Tabbar');
                 },
@@ -164,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              GestureDetector(
+              Bounceable(
                 onTap: () {
                   Navigator.pushNamed(context, 'Tabbar2');
                 },

@@ -16,7 +16,7 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.black,
         ),
@@ -77,7 +77,6 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
                                       logolink: data.logolink,
                                       youtubeid: data.youtubevideoid,
                                       blog: data.blog,
-                                      totaltime: data.totaltime,
                                       index: index);
                                 }));
                               } else if (data.sections == 'section 6') {
@@ -88,7 +87,6 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
                                       logolink: data.logolink,
                                       youtubeid: data.youtubevideoid,
                                       blog: data.blog,
-                                      totaltime: data.totaltime,
                                       index: index);
                                 }));
                               }

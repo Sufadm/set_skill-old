@@ -148,7 +148,6 @@ class _MernLecturesState extends State<MernLectures> {
                                                   youtubeid:
                                                       data.youtubevideoid,
                                                   blog: data.blog,
-                                                  totaltime: data.totaltime,
                                                   index: index);
                                             }));
                                           } else if (data.sectionsmern ==
@@ -162,7 +161,6 @@ class _MernLecturesState extends State<MernLectures> {
                                                   youtubeid:
                                                       data.youtubevideoid,
                                                   blog: data.blog,
-                                                  totaltime: data.totaltime,
                                                   index: index);
                                             }));
                                           }

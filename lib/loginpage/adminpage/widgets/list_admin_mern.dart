@@ -68,7 +68,6 @@ class ListSectionsMern extends StatelessWidget {
                                       logolink: data.logolink,
                                       youtubeid: data.youtubevideoid,
                                       blog: data.blog,
-                                      totaltime: data.totaltime,
                                       index: index);
                                 }));
                               } else if (data.sectionsmern == 'section 6') {
@@ -79,7 +78,6 @@ class ListSectionsMern extends StatelessWidget {
                                       logolink: data.logolink,
                                       youtubeid: data.youtubevideoid,
                                       blog: data.blog,
-                                      totaltime: data.totaltime,
                                       index: index);
                                 }));
                               }

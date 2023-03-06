@@ -14,8 +14,6 @@ class CourseFlutter {
   @HiveField(4)
   String blog;
   @HiveField(5)
-  String totaltime;
-  @HiveField(6)
   String sections;
 
   CourseFlutter(
@@ -23,7 +21,6 @@ class CourseFlutter {
       required this.logolink,
       required this.youtubevideoid,
       required this.blog,
-      required this.totaltime,
       required this.sections,
       this.id});
 }

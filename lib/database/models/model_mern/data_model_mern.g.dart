@@ -21,8 +21,7 @@ class CourseMernAdapter extends TypeAdapter<CourseMern> {
       logolink: fields[2] as String,
       youtubevideoid: fields[3] as String,
       blog: fields[4] as String,
-      totaltime: fields[5] as String,
-      sectionsmern: fields[6] as String,
+      sectionsmern: fields[5] as String,
       id: fields[0] as int?,
     );
   }
@@ -30,7 +29,7 @@ class CourseMernAdapter extends TypeAdapter<CourseMern> {
   @override
   void write(BinaryWriter writer, CourseMern obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -42,8 +41,6 @@ class CourseMernAdapter extends TypeAdapter<CourseMern> {
       ..writeByte(4)
       ..write(obj.blog)
       ..writeByte(5)
-      ..write(obj.totaltime)
-      ..writeByte(6)
       ..write(obj.sectionsmern);
   }
 

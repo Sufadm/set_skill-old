@@ -34,6 +34,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_bounceable: ^1.1.0
   flutter_document_picker: ^5.1.0
   flutter_share: ^2.0.0
   google_fonts: ^4.0.3

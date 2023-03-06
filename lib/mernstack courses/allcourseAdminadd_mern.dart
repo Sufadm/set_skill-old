@@ -9,7 +9,7 @@ class MernAllCourse extends StatefulWidget {
   final String logolink;
   final String youtubeid;
   final String blog;
-  final String totaltime;
+
   final int index;
   const MernAllCourse(
       {super.key,
@@ -17,7 +17,6 @@ class MernAllCourse extends StatefulWidget {
       required this.logolink,
       required this.youtubeid,
       required this.blog,
-      required this.totaltime,
       required this.index});
 
   @override

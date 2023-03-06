@@ -157,24 +157,24 @@ class _MernAddCourseState extends State<MernAddCourse> {
                 const SizedBox(
                   height: 10,
                 ),
-                TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return ' Total time is Required';
-                    } else {
-                      return null;
-                    }
-                  },
-                  controller: _totaltime,
-                  style: const TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      fontStyle: FontStyle.italic),
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Total Time',
-                      hintStyle:
-                          TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-                ),
+                // TextFormField(
+                //   validator: (value) {
+                //     if (value == null || value.isEmpty) {
+                //       return ' Total time is Required';
+                //     } else {
+                //       return null;
+                //     }
+                //   },
+                //   controller: _totaltime,
+                //   style: const TextStyle(
+                //       color: Color.fromARGB(255, 0, 0, 0),
+                //       fontStyle: FontStyle.italic),
+                //   decoration: const InputDecoration(
+                //       border: OutlineInputBorder(),
+                //       hintText: 'Total Time',
+                //       hintStyle:
+                //           TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
+                // ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -207,13 +207,12 @@ class _MernAddCourseState extends State<MernAddCourse> {
     final logo = _logolink.text.trim();
     final videolink = _youtubevideoid.text.trim();
     final blg = _blog.text.trim();
-    final duration = _totaltime.text.trim();
+
     final sectionsmern = _section.text.trim();
     if (name.isEmpty |
         logo.isEmpty |
         videolink.isEmpty |
         blg.isEmpty |
-        duration.isEmpty |
         sectionsmern.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -228,7 +227,6 @@ class _MernAddCourseState extends State<MernAddCourse> {
         logolink: logo,
         youtubevideoid: videolink,
         blog: blg,
-        totaltime: duration,
         sectionsmern: sectionsmern,
       );
       addcoursemern(model1);

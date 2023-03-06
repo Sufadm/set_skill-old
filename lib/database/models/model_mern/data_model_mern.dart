@@ -14,8 +14,6 @@ class CourseMern {
   @HiveField(4)
   String blog;
   @HiveField(5)
-  String totaltime;
-  @HiveField(6)
   String sectionsmern;
 
   CourseMern(
@@ -23,7 +21,6 @@ class CourseMern {
       required this.logolink,
       required this.youtubevideoid,
       required this.blog,
-      required this.totaltime,
       required this.sectionsmern,
       this.id});
 }
