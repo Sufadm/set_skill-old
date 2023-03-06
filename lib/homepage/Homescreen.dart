@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
-import 'package:set_skill/account/account.dart';
-import 'package:set_skill/flutterpages/mernstack_pages/overview_mern.dart';
-import 'package:set_skill/flutterpages/tabbar.dart';
-import 'package:set_skill/mycourses/mycourse.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../search_bar/search.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -112,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 15,
           ),
-          //categories started================================================================================================================================
+          //!categories started================================================================================================================================
           Container(
               margin: const EdgeInsets.only(left: 13),
               alignment: Alignment.topLeft,
@@ -208,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ],
           ),
-          //categories END==============
+          //!categories END==========================================================
           const SizedBox(
             height: 15,
           ),

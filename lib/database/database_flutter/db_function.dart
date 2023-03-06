@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hive/hive.dart';
+import 'package:set_skill/database/models/overview_model/flutter_overview_model.dart';
 import '../models/fluttermodel/data_model.dart';
 
 ValueNotifier<List<CourseFlutter>> courselistNotifier = ValueNotifier([]);
@@ -22,4 +23,15 @@ Future<void> deletesection(int id) async {
   final sectionsDB = await Hive.openBox<CourseFlutter>('coursedetails');
   await sectionsDB.deleteAt(id);
   getallcourseFlutter();
+}
+
+ValueNotifier<List<FlutterOverviewModel>> overviewlistFlutterNotifier =
+    ValueNotifier([]);
+Future<void> addoverviewflutter(FlutterOverviewModel value) async {
+  final overviewDB =
+      await Hive.openBox<FlutterOverviewModel>('overviewFlutter');
+  final overviewid = await overviewDB.add(value);
+  value.id = overviewid;
+  overviewlistFlutterNotifier.notifyListeners();
+  overviewlistFlutterNotifier.value.add(value);
 }

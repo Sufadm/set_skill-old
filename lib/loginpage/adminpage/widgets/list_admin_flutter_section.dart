@@ -21,7 +21,7 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
           color: Colors.black,
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'AdminAccessPage');
+          Navigator.pushNamed(context, 'OverviewFlutterAdmin');
         },
       ),
       appBar: AppBar(
@@ -61,35 +61,41 @@ class _ListSectionsFlutterState extends State<ListSectionsFlutter> {
                       children: [
                         IconButton(
                             onPressed: () {
-                              if (data.sections == 'section 1') {
-                                Navigator.pushNamed(context, 'DartBasics');
-                              } else if (data.sections == 'section 2') {
-                                Navigator.pushNamed(context, 'FlutterBasics');
-                              } else if (data.sections == 'section 3') {
-                                Navigator.pushNamed(context, 'Widgets');
-                              } else if (data.sections == 'section 4') {
-                                Navigator.pushNamed(context, 'DataBase');
-                              } else if (data.sections == 'section 5') {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return FlutterAllCourse(
-                                      coursename: data.coursename,
-                                      logolink: data.logolink,
-                                      youtubeid: data.youtubevideoid,
-                                      blog: data.blog,
-                                      index: index);
-                                }));
-                              } else if (data.sections == 'section 6') {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return FlutterAllCourse(
-                                      coursename: data.coursename,
-                                      logolink: data.logolink,
-                                      youtubeid: data.youtubevideoid,
-                                      blog: data.blog,
-                                      index: index);
-                                }));
+                              // if (data.sections == 'section 1') {
+                              if (data.sections == 'section 1' ||
+                                  data.sections == 'section 2' ||
+                                  data.sections == 'section 3' ||
+                                  data.sections == 'section 4') {
+                                Navigator.pushNamed(context, 'DisplayOverview');
                               }
+
+                              // } else if (data.sections == 'section 2') {
+                              //   Navigator.pushNamed(context, 'FlutterBasics');
+                              // } else if (data.sections == 'section 3') {
+                              //   Navigator.pushNamed(context, 'Widgets');
+                              // } else if (data.sections == 'section 4') {
+                              //   Navigator.pushNamed(context, 'DataBase');
+                              // } else if (data.sections == 'section 5') {
+                              //   Navigator.push(context,
+                              //       MaterialPageRoute(builder: (context) {
+                              // return FlutterAllCourse(
+                              //     coursename: data.coursename,
+                              //     logolink: data.logolink,
+                              //     youtubeid: data.youtubevideoid,
+                              //     blog: data.blog,
+                              //     index: index);
+                              //   }));
+                              // } else if (data.sections == 'section 6') {
+                              //   Navigator.push(context,
+                              //       MaterialPageRoute(builder: (context) {
+                              //     return FlutterAllCourse(
+                              //         coursename: data.coursename,
+                              //         logolink: data.logolink,
+                              //         youtubeid: data.youtubevideoid,
+                              //         blog: data.blog,
+                              //         index: index);
+                              //   }));
+                              // }
                             },
                             icon: const Icon(Icons.play_arrow)),
                         Text(data.sections,

@@ -157,24 +157,6 @@ class _MernAddCourseState extends State<MernAddCourse> {
                 const SizedBox(
                   height: 10,
                 ),
-                // TextFormField(
-                //   validator: (value) {
-                //     if (value == null || value.isEmpty) {
-                //       return ' Total time is Required';
-                //     } else {
-                //       return null;
-                //     }
-                //   },
-                //   controller: _totaltime,
-                //   style: const TextStyle(
-                //       color: Color.fromARGB(255, 0, 0, 0),
-                //       fontStyle: FontStyle.italic),
-                //   decoration: const InputDecoration(
-                //       border: OutlineInputBorder(),
-                //       hintText: 'Total Time',
-                //       hintStyle:
-                //           TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-                // ),
                 const SizedBox(
                   height: 10,
                 ),

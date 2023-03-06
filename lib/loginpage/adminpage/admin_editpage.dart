@@ -154,24 +154,6 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                // TextFormField(
-                //   validator: (value) {
-                //     if (value == null || value.isEmpty) {
-                //       return ' Total time is Required';
-                //     } else {
-                //       return null;
-                //     }
-                //   },
-                //   controller: _totaltime,
-                //   style: const TextStyle(
-                //       color: Color.fromARGB(255, 0, 0, 0),
-                //       fontStyle: FontStyle.italic),
-                //   decoration: const InputDecoration(
-                //       border: OutlineInputBorder(),
-                //       labelText: 'Total Time',
-                //       hintStyle:
-                //           TextStyle(color: Color.fromARGB(255, 3, 2, 2))),
-                // ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -205,6 +187,7 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
     final videolink = _youtubevideoid.text.trim();
     final blg = _blog.text.trim();
     final sectionflutter = _section.text.trim();
+
     if (name.isEmpty |
         logo.isEmpty |
         videolink.isEmpty |
@@ -230,14 +213,4 @@ class _AdminAccessPageState extends State<AdminAccessPage> {
       }));
     }
   }
-
-  // Future<void> addsection() async {
-  //   final sectionnumber = _section.text.trim();
-  //   if (sectionnumber.isEmpty) {
-  //     return;
-  //   } else {
-  //     final model2 = Section(sections: sectionnumber);
-  //     addsections(model2);
-  //   }
-  // }
 }
